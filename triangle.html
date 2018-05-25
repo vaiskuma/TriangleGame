@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="http://d5wfroyti11sa.cloudfront.net/prod/client/ts-10.0.23.min.css"/>
+  <link rel="stylesheet"
+  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+<script src="http://d5wfroyti11sa.cloudfront.net/prod/client/ts-10.0.23.min.js"></script>
+
+
+</head>
+<title> Triangle game</title>
+
+</head>
+<body>
+
+<h1 style="font-family: 'Satisfy', cursive;
+">Get your Triangle type here!</h1>
+<header data-ts="TopBar">Get your Triangle type here!</header>
+<form  data-ts="Form"action="" name="sides" style="padding: 12px 20px;">
+  	<fieldset>
+<p>Enter First side of a Triangle:
+<input style ="width:15%; " type="number" name="A" ><br />
+<p>Enter Other side:
+<input style ="width:15%" type="number" name="B" ><br />
+<p>Enter Dark Side of Triangle:
+<input style ="width:15%" type="number" name="C" ><br />
+<input type="button" style ="width:20ex;background-color:darkseagreen;display: inline-block;" value="What's your type?"
+onclick="triangle();">
+</p>
+</fieldset>
+</form>
+
+
+</body>
+<script>
+
+	function triangle() {
+		var A = parseInt(document.sides.A.value);//converts input for side A to integer
+		var B = parseInt(document.sides.B.value);//converts for side B
+		var C = parseInt(document.sides.C.value);//converts for side C
+		console.log(A);
+		console.log(B);
+		console.log(C);
+	
+	
+	//Two of the sides has to be greater then the third side
+	
+		var AB = parseInt(document.sides.A.value) + parseInt(document.sides.B.value);//side A + B to check if a triangle can be formed
+		var AC = parseInt(document.sides.A.value) + parseInt(document.sides.C.value);//side A + C
+		var BC = parseInt(document.sides.B.value) + parseInt(document.sides.C.value);//side B + C
+		console.log(AB);
+		console.log(AC);
+		console.log(BC);
+	
+	
+		 if((A <= 0 || B<=  0 || C <= 0 )) {
+			 return alert("Length of sides cannot be equal to or less than zero");
+	
+		}
+		if((AB < C) && (AC < B) && (BC < A)) {
+			 return alert("These numbers can not form a triangle.");
+		}
+		if ((A == B) && (B == C)) {
+			return alert("The Triangle is Equilateral");
+	
+		}
+		if ((A == B) || (B == C)) {
+			 return alert("The Triangle is Isosceles");
+		}
+	
+		else {
+			 return alert("The Triangle is Scalene.");
+		}
+	
+	
+	}
+	
+	</script>
+</html>
